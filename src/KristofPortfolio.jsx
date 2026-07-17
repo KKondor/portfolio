@@ -181,32 +181,16 @@ export default function Portfolio() {
                 {n.label}
               </button>
             ))}
-            <a
+
+          </div>
+          <a
               href="mailto:kkondor66@gmail.com"
               className="text-sm px-4 py-2 rounded-full font-medium"
               style={{ border: `1px solid ${c.accentSoft}`, color: c.accent }}
-            >
-              Get in touch
-            </a>
-          </div>
-          <button className="md:hidden" onClick={() => setMenuOpen((m) => !m)}>
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          >
+            Get in touch
+          </a>
         </div>
-        {menuOpen && (
-          <div className="md:hidden flex flex-col gap-1 px-6 pb-4" style={{ borderTop: `1px solid ${c.border}` }}>
-            {navItems.map((n) => (
-              <button
-                key={n.id}
-                onClick={() => goTo(n.id)}
-                className="text-left py-2 text-sm"
-                style={{ color: c.dim }}
-              >
-                {n.label}
-              </button>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Hero */}
