@@ -184,7 +184,7 @@ export default function Portfolio() {
             <a
               href="mailto:kkondor66@gmail.com"
               className="text-sm px-4 py-2 rounded-full font-medium"
-              style={{ background: c.accent, color: c.bg }}
+              style={{ border: `1px solid ${c.accentSoft}`, color: c.accent }}
             >
               Get in touch
             </a>
@@ -226,14 +226,14 @@ export default function Portfolio() {
         <p className="max-w-2xl text-base sm:text-lg leading-relaxed mb-8" style={{ color: c.dim }}>
           I enjoy tackling complex problems and finding clear, logical solutions. I learn quickly,
           adapt well to new challenges, and I'm motivated by seeing the real impact of my work.
-          Currently finishing a BSc in Computer Science at the University of Debrecen, and open to
+          Graduated with BSc in Computer Science from the University of Debrecen, and open to
           backend, frontend, full-stack roles but I am open to other developer roles too.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
             href="mailto:kkondor66@gmail.com"
             className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full"
-            style={{ background: c.accent, color: c.bg }}
+            style={{ border: `1px solid ${c.accentSoft}`, color: c.accent }}
           >
             <Mail size={16} /> Email me
           </a>
