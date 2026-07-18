@@ -95,7 +95,6 @@ const stats = [
 ];
 
 const navItems = [
-  { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "resume", label: "Resume" },
@@ -179,12 +178,12 @@ export default function Portfolio() {
         }
 
         /* Hero */
-        .kk-hero { max-width: 960px; margin: 0 auto; padding: 64px 24px 48px; }
+        .kk-hero { max-width: 960px; margin: 0 auto; padding: 64px 24px 48px; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .kk-badge { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 999px; margin-bottom: 24px; background: ${c.elevated}; color: ${c.dim}; border: 1px solid ${c.border}; }
         .kk-title { font-size: 36px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 16px; }
         .kk-role { font-size: 19px; margin: 0 0 24px; color: ${c.accent}; }
-        .kk-desc { max-width: 640px; font-size: 16px; line-height: 1.7; margin: 0 0 32px; color: ${c.dim}; }
-        .kk-btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 56px; }
+        .kk-desc { max-width: 640px; font-size: 16px; line-height: 1.7; margin: 0 auto 32px; color: ${c.dim}; }
+        .kk-btn-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 56px; }
         .kk-btn {
           display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;
           padding: 10px 20px; border-radius: 999px; border: 1px solid ${c.border}; color: ${c.text};
@@ -194,8 +193,8 @@ export default function Portfolio() {
         .kk-btn-solid { background: ${c.accent}; color: ${c.bg}; border: none; }
         .kk-btn-solid:hover { filter: brightness(1.08); }
 
-        .kk-stats { display: flex; flex-wrap: wrap; border-top: 1px solid ${c.border}; border-bottom: 1px solid ${c.border}; }
-        .kk-stat { flex: 1; min-width: 140px; padding: 24px 8px; }
+        .kk-stats { display: flex; flex-wrap: wrap; width: 100%; border-top: 1px solid ${c.border}; border-bottom: 1px solid ${c.border}; }
+        .kk-stat { flex: 1; min-width: 140px; padding: 24px 8px; text-align: center; }
         .kk-stat + .kk-stat { border-left: 1px solid ${c.border}; }
         .kk-stat-value { font-size: 28px; font-weight: 700; color: ${c.text}; }
         .kk-stat-label { font-size: 13px; margin-top: 4px; color: ${c.faint}; }
@@ -283,14 +282,14 @@ export default function Portfolio() {
 
       {/* Hero */}
       <div id="top" className="kk-hero">
-        <div className="kk-badge">Open to opportunities · Graduated 2026</div>
+        <div className="kk-badge">Open to opportunities · BSc Computer Science, 2026</div>
         <h1 className="kk-title">Kondor Kristóf</h1>
         <p className="kk-role">Entry-Level Full-Stack Developer</p>
         <p className="kk-desc">
           I enjoy tackling complex problems and finding clear, logical solutions. I learn quickly,
           adapt well to new challenges, and I'm motivated by seeing the real impact of my work.
-          Graduated in 2026 July with BSc in Computer Science at the University of Debrecen, and open to
-          backend, frontend, or full-stack roles.
+          Graduated in June 2026 with a BSc in Computer Science from the University of Debrecen,
+          and open to backend, frontend, or full-stack roles.
         </p>
         <div className="kk-btn-row">
           <a href="mailto:kkondor66@gmail.com" className="kk-btn kk-btn-solid">
