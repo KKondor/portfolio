@@ -289,7 +289,7 @@ export default function Portfolio() {
           I enjoy tackling complex problems and finding clear, logical solutions. I learn quickly,
           adapt well to new challenges, and I'm motivated by seeing the real impact of my work.
           Graduated in June 2026 with a BSc in Computer Science from the University of Debrecen,
-          and open to backend, frontend, or full-stack roles.
+          and open to backend, frontend, full-stack or other developer roles.
         </p>
         <div className="kk-btn-row">
           <a href="mailto:kkondor66@gmail.com" className="kk-btn kk-btn-solid">
@@ -442,7 +442,7 @@ export default function Portfolio() {
       {/* Contact */}
       <Section id="contact" eyebrow="Let's talk" title="Contact">
         <p className="kk-contact-lead">
-          Open to entry-level full-stack, backend, or frontend roles. Feel free to reach out.
+          Open to entry-level full-stack, backend, frontend or other developer roles. Feel free to reach out.
         </p>
         <div className="kk-contact-grid">
           {[
