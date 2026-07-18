@@ -31,6 +31,7 @@ function Linkedin({ size = 18, style }) {
 const projects = [
   {
     name: "TodoWeb",
+    color: "#5eead4",
     tagline: "Full-stack task manager with a .NET API and React frontend",
     stack: ["ASP.NET Core", "Entity Framework", "SQL Server", "React", "xUnit"],
     github: "https://github.com/KKondor/Todoweb",
@@ -44,6 +45,7 @@ const projects = [
   },
   {
     name: "Weather Web App",
+    color: "#a78bfa",
     tagline: "A layered Angular + Spring Boot app wrapping a third-party weather API",
     stack: ["Java 17", "Spring Boot", "Angular", "TypeScript", "Gradle"],
     github: "https://github.com/KKondor/WeatherWebApp",
@@ -57,6 +59,7 @@ const projects = [
   },
   {
     name: "Restaurant Webshop",
+    color: "#fbbf24",
     tagline: "A team-built ordering platform with an AI chatbot, 4 developers",
     stack: ["Python", "Flask", "MySQL", "HTML/CSS", "OpenRouter API"],
     github: "https://github.com/KKondor/RestaurantWebshop",
@@ -83,6 +86,12 @@ const certifications = [
   { name: "IT Specialist — HTML and CSS", org: "Certiport (Pearson VUE), 2026", url: "https://www.credly.com/badges/da2f4038-813f-4843-a922-362fcd0f34bb/public_url" },
   { name: "IT Specialist — Java", org: "Certiport (Pearson VUE), 2026", url: "https://www.credly.com/badges/2980f83d-4019-418d-aba9-48a1de5a3317/public_url" },
   { name: "Unity Certified User: Programmer", org: "Unity Technologies, 2026", url: "https://www.credly.com/badges/44e0e885-f441-45e4-9417-9e847aa2cb01/public_url" },
+];
+
+const stats = [
+  { value: "3", label: "Shipped Projects" },
+  { value: "5", label: "Certifications" },
+  { value: "2026", label: "Graduated" },
 ];
 
 const navItems = [
@@ -151,6 +160,12 @@ export default function Portfolio() {
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-thumb { background: ${c.border}; border-radius: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
+        .kk-pill { transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+        .kk-pill:hover { transform: translateY(-2px); border-color: ${c.accent}88; }
+        .kk-pill-solid:hover { filter: brightness(1.08); transform: translateY(-2px); }
+        .kk-card { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+        .kk-card:hover { transform: translateY(-4px); border-color: #3a4150; box-shadow: 0 12px 30px -10px rgba(0,0,0,0.5); }
+        .kk-contact:hover { background: ${c.elevated}; border-color: #3a4150; transform: translateY(-2px); }
       `}</style>
 
       {/* Nav */}
@@ -162,7 +177,10 @@ export default function Portfolio() {
           transition: "all 0.2s ease",
         }}
       >
-        <div className="max-w-5xl mx-auto px-6 sm:px-10 flex items-center justify-between h-16">
+        <div
+          className="max-w-5xl mx-auto px-6 sm:px-10 flex items-center justify-between h-16"
+          style={{ display: "flex" }}
+        >
           <button
             onClick={() => goTo("top")}
             className="font-semibold tracking-tight"
@@ -170,7 +188,7 @@ export default function Portfolio() {
           >
             Kondor Kristóf
           </button>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center" style={{ gap: "2rem" }}>
             {navItems.map((n) => (
               <button
                 key={n.id}
@@ -181,25 +199,44 @@ export default function Portfolio() {
                 {n.label}
               </button>
             ))}
-
-          </div>
-          <a
+            <a
               href="mailto:kkondor66@gmail.com"
-              className="text-sm px-4 py-2 rounded-full font-medium"
-              style={{ border: `1px solid ${c.accentSoft}`, color: c.accent }}
-          >
-            Get in touch
-          </a>
+              className="text-sm px-4 py-2 rounded-full font-medium kk-pill-solid"
+              style={{ background: c.accent, color: c.bg }}
+            >
+              Get in touch
+            </a>
+          </div>
+          <button className="md:hidden" onClick={() => setMenuOpen((m) => !m)}>
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
+        {menuOpen && (
+          <div
+            className="md:hidden flex flex-col px-6 pb-4"
+            style={{ borderTop: `1px solid ${c.border}`, gap: "0.25rem" }}
+          >
+            {navItems.map((n) => (
+              <button
+                key={n.id}
+                onClick={() => goTo(n.id)}
+                className="text-left py-2 text-sm"
+                style={{ color: c.dim }}
+              >
+                {n.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Hero */}
-      <div id="top" className="max-w-5xl mx-auto px-6 sm:px-10 pt-16 sm:pt-24 pb-16">
+      <div id="top" className="max-w-5xl mx-auto px-6 sm:px-10 pt-16 sm:pt-24 pb-12">
         <div
           className="inline-block text-xs font-medium px-3 py-1 rounded-full mb-6"
           style={{ background: c.elevated, color: c.dim, border: `1px solid ${c.border}` }}
         >
-          Open to opportunities · Fresh Graduate 2026
+          Open to opportunities · Graduating 2026
         </div>
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-4">
           Kondor Kristóf
@@ -210,14 +247,14 @@ export default function Portfolio() {
         <p className="max-w-2xl text-base sm:text-lg leading-relaxed mb-8" style={{ color: c.dim }}>
           I enjoy tackling complex problems and finding clear, logical solutions. I learn quickly,
           adapt well to new challenges, and I'm motivated by seeing the real impact of my work.
-          Graduated with BSc in Computer Science from the University of Debrecen, and open to
-          backend, frontend, full-stack roles but I am open to other developer roles too.
+          Graduated in 2026 with BSc in Computer Science at the University of Debrecen, and open to
+          backend, frontend, full-stack or any developer roles.
         </p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap mb-14" style={{ gap: "0.75rem" }}>
           <a
             href="mailto:kkondor66@gmail.com"
-            className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full"
-            style={{ border: `1px solid ${c.accentSoft}`, color: c.accent }}
+            className="kk-pill-solid inline-flex items-center text-sm font-medium px-5 py-2.5 rounded-full"
+            style={{ background: c.accent, color: c.bg, gap: "0.5rem" }}
           >
             <Mail size={16} /> Email me
           </a>
@@ -225,8 +262,8 @@ export default function Portfolio() {
             href="https://github.com/KKondor"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full"
-            style={{ border: `1px solid ${c.border}`, color: c.text }}
+            className="kk-pill inline-flex items-center text-sm font-medium px-5 py-2.5 rounded-full"
+            style={{ border: `1px solid ${c.border}`, color: c.text, gap: "0.5rem" }}
           >
             <Github size={16} /> GitHub
           </a>
@@ -234,64 +271,109 @@ export default function Portfolio() {
             href="https://www.linkedin.com/in/kristof-kondor-196006395"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full"
-            style={{ border: `1px solid ${c.border}`, color: c.text }}
+            className="kk-pill inline-flex items-center text-sm font-medium px-5 py-2.5 rounded-full"
+            style={{ border: `1px solid ${c.border}`, color: c.text, gap: "0.5rem" }}
           >
             <Linkedin size={16} /> LinkedIn
           </a>
+        </div>
+
+        {/* Stats strip */}
+        <div
+          className="flex flex-wrap"
+          style={{ gap: "0", borderTop: `1px solid ${c.border}`, borderBottom: `1px solid ${c.border}` }}
+        >
+          {stats.map((s, i) => (
+            <div
+              key={s.label}
+              className="flex-1 py-6 px-2"
+              style={{ borderLeft: i > 0 ? `1px solid ${c.border}` : "none", minWidth: 140 }}
+            >
+              <div className="text-2xl sm:text-3xl font-bold" style={{ color: c.text }}>
+                {s.value}
+              </div>
+              <div className="text-xs sm:text-sm mt-1" style={{ color: c.faint }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Projects */}
       <Section id="projects" eyebrow="Selected work" title="Projects">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col" style={{ gap: "1.75rem" }}>
           {projects.map((p) => (
             <div
               key={p.name}
-              className="rounded-2xl p-6 sm:p-8"
+              className="kk-card rounded-2xl overflow-hidden"
               style={{ background: c.panel, border: `1px solid ${c.border}` }}
             >
-              <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">{p.name}</h3>
-                  <p style={{ color: c.dim }}>{p.tagline}</p>
+              {/* Thumbnail */}
+              <div
+                className="h-28 sm:h-32 flex items-center px-6 sm:px-8"
+                style={{
+                  background: `linear-gradient(135deg, ${p.color}33, ${p.color}0d)`,
+                  borderBottom: `1px solid ${c.border}`,
+                }}
+              >
+                <div
+                  className="flex items-center justify-center rounded-xl text-2xl font-bold"
+                  style={{
+                    width: 56,
+                    height: 56,
+                    background: `${p.color}22`,
+                    color: p.color,
+                    border: `1px solid ${p.color}55`,
+                  }}
+                >
+                  {p.name.charAt(0)}
                 </div>
-                <div className="flex gap-2 shrink-0">
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full"
-                    style={{ border: `1px solid ${c.border}`, color: c.text }}
-                  >
-                    <Github size={13} /> Code
-                  </a>
-                  {p.demo && (
+              </div>
+
+              <div className="p-6 sm:p-8">
+                <div className="flex flex-wrap items-start justify-between mb-3" style={{ gap: "0.75rem" }}>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">{p.name}</h3>
+                    <p style={{ color: c.dim }}>{p.tagline}</p>
+                  </div>
+                  <div className="flex shrink-0" style={{ gap: "0.5rem" }}>
                     <a
-                      href={p.demo}
+                      href={p.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full"
-                      style={{ background: c.accentSoft, color: c.accent }}
+                      className="kk-pill inline-flex items-center text-xs font-medium px-3 py-1.5 rounded-full"
+                      style={{ border: `1px solid ${c.border}`, color: c.text, gap: "0.4rem" }}
                     >
-                      Live demo <ArrowUpRight size={13} />
+                      <Github size={13} /> Code
                     </a>
-                  )}
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="kk-pill inline-flex items-center text-xs font-medium px-3 py-1.5 rounded-full"
+                        style={{ background: `${p.color}22`, color: p.color, gap: "0.4rem" }}
+                      >
+                        Live demo <ArrowUpRight size={13} />
+                      </a>
+                    )}
+                  </div>
                 </div>
+                <div className="flex flex-wrap mb-4" style={{ gap: "0.5rem" }}>
+                  {p.stack.map((s) => (
+                    <Tag key={s}>{s}</Tag>
+                  ))}
+                </div>
+                <ul className="flex flex-col" style={{ gap: "0.4rem" }}>
+                  {p.bullets.map((b, i) => (
+                    <li key={i} className="text-sm flex" style={{ color: c.dim, gap: "0.5rem" }}>
+                      <span style={{ color: p.color }}>•</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {p.stack.map((s) => (
-                  <Tag key={s}>{s}</Tag>
-                ))}
-              </div>
-              <ul className="flex flex-col gap-1.5">
-                {p.bullets.map((b, i) => (
-                  <li key={i} className="text-sm flex gap-2" style={{ color: c.dim }}>
-                    <span style={{ color: c.accent }}>•</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>
@@ -299,17 +381,17 @@ export default function Portfolio() {
 
       {/* Skills */}
       <Section id="skills" eyebrow="Toolbox" title="Skills">
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2" style={{ gap: "1.5rem" }}>
           {skillGroups.map((g) => (
             <div
               key={g.title}
-              className="rounded-2xl p-6"
+              className="kk-card rounded-2xl p-6"
               style={{ background: c.panel, border: `1px solid ${c.border}` }}
             >
               <h3 className="text-sm font-semibold mb-3" style={{ color: c.dim }}>
                 {g.title}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap" style={{ gap: "0.5rem" }}>
                 {g.items.map((s) => (
                   <Tag key={s}>{s}</Tag>
                 ))}
@@ -321,23 +403,23 @@ export default function Portfolio() {
 
       {/* Resume */}
       <Section id="resume" eyebrow="Background" title="Resume">
-        <div className="flex flex-col gap-8">
-          <div className="rounded-2xl p-6" style={{ background: c.panel, border: `1px solid ${c.border}` }}>
+        <div className="flex flex-col" style={{ gap: "1.5rem" }}>
+          <div className="kk-card rounded-2xl p-6" style={{ background: c.panel, border: `1px solid ${c.border}` }}>
             <div className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: c.faint }}>
               Education
             </div>
-            <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+            <div className="flex flex-wrap items-baseline justify-between mb-1" style={{ gap: "0.5rem" }}>
               <span className="font-semibold">BSc, Computer Science</span>
               <span className="text-sm" style={{ color: c.dim }}>2023.09 – 2026.06</span>
             </div>
             <div style={{ color: c.dim }}>University of Debrecen</div>
           </div>
 
-          <div className="rounded-2xl p-6" style={{ background: c.panel, border: `1px solid ${c.border}` }}>
+          <div className="kk-card rounded-2xl p-6" style={{ background: c.panel, border: `1px solid ${c.border}` }}>
             <div className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: c.faint }}>
               Internship
             </div>
-            <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+            <div className="flex flex-wrap items-baseline justify-between mb-1" style={{ gap: "0.5rem" }}>
               <span className="font-semibold">IT Intern, Coloplast</span>
               <span className="text-sm" style={{ color: c.dim }}>2025.07 – 2025.11</span>
             </div>
@@ -348,19 +430,19 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="rounded-2xl p-6" style={{ background: c.panel, border: `1px solid ${c.border}` }}>
+          <div className="kk-card rounded-2xl p-6" style={{ background: c.panel, border: `1px solid ${c.border}` }}>
             <div className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: c.faint }}>
               Certifications
             </div>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col" style={{ gap: "0.6rem" }}>
               {certifications.map((cert) => (
-                <li key={cert.name} className="flex flex-wrap items-baseline justify-between gap-2">
+                <li key={cert.name} className="flex flex-wrap items-baseline justify-between" style={{ gap: "0.5rem" }}>
                   <a
                     href={cert.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium hover:underline flex items-center gap-1"
-                    style={{ color: c.text }}
+                    className="text-sm font-medium hover:underline inline-flex items-center"
+                    style={{ color: c.text, gap: "0.3rem" }}
                   >
                     {cert.name} <ExternalLink size={11} style={{ color: c.faint }} />
                   </a>
@@ -375,9 +457,9 @@ export default function Portfolio() {
       {/* Contact */}
       <Section id="contact" eyebrow="Let's talk" title="Contact">
         <p className="mb-8" style={{ color: c.dim }}>
-          Open to entry-level developer roles. Feel free to reach out.
+          Open to entry-level full-stack, backend, frontend or other developer roles. Feel free to reach out.
         </p>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2" style={{ gap: "1rem" }}>
           {[
             { icon: Mail, label: "kkondor66@gmail.com", href: "mailto:kkondor66@gmail.com" },
             { icon: Phone, label: "+36204404286", href: "tel:+36204404286" },
@@ -393,8 +475,8 @@ export default function Portfolio() {
               href={r.href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 px-5 py-4 rounded-2xl"
-              style={{ background: c.panel, border: `1px solid ${c.border}`, color: c.text }}
+              className="kk-contact flex items-center px-5 py-4 rounded-2xl"
+              style={{ background: c.panel, border: `1px solid ${c.border}`, color: c.text, gap: "0.75rem" }}
             >
               <r.icon size={18} style={{ color: c.accent }} />
               {r.label}
