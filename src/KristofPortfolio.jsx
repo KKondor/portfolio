@@ -41,6 +41,7 @@ const projects = [
       "Designed a Kanban board with drag-and-drop status updates, backed by ownership-scoped REST endpoints",
       "Deployed as three independent services: React frontend, ASP.NET API, and PostgreSQL",
       "Layered the API with Repository → Service → Endpoint separation and DTOs to keep sensitive fields out of responses",
+      "Note: If you are using the live demo some browsers block cross origin cookies which block most functions and force you to login again after refresh. For full experience use chrome"
     ],
   },
   {
