@@ -30,6 +30,20 @@ function Linkedin({ size = 18, style }) {
 
 const projects = [
   {
+    name: "JobFollower",
+    color: "#ef4444",
+    tagline: "A drag-and-drop Kanban board for tracking job applications, with full JWT auth",
+    stack: ["ASP.NET Core", "PostgreSQL", "React", "TypeScript", "@dnd-kit"],
+    github: "https://github.com/KKondor/JobFollower",
+    demo: "https://job-follower.vercel.app",
+    bullets: [
+      "Built JWT auth with hashed passwords and rotating, single-use refresh tokens stored server-side",
+      "Designed a Kanban board with drag-and-drop status updates, backed by ownership-scoped REST endpoints",
+      "Deployed as three independent services: React frontend, ASP.NET API, and PostgreSQL",
+      "Layered the API with Repository → Service → Endpoint separation and DTOs to keep sensitive fields out of responses",
+    ],
+  },
+  {
     name: "TodoWeb",
     color: "#5eead4",
     tagline: "Full-stack task manager with a .NET API and React frontend",
@@ -75,7 +89,7 @@ const projects = [
 
 const skillGroups = [
   { title: "Languages", items: ["C#", "Java", "Python", "JavaScript", "TypeScript", "C++"] },
-  { title: "Backend", items: ["ASP.NET", "Entity Framework", "OOP", "SQL", "MySQL"] },
+  { title: "Backend", items: ["ASP.NET", "Entity Framework", "OOP", "SQL", "MySQL", "PostgreSQL"] },
   { title: "Frontend", items: ["Angular", "React", "HTML", "CSS", "SASS"] },
   { title: "Tools", items: ["Git & GitHub", "Linux", "Swagger", "Unit Testing"] },
 ];
@@ -89,7 +103,7 @@ const certifications = [
 ];
 
 const stats = [
-  { value: "3", label: "Shipped projects" },
+  { value: "4", label: "Shipped projects" },
   { value: "5", label: "Certifications" },
   { value: "2026", label: "Graduated" },
 ];
