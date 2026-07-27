@@ -102,11 +102,12 @@ const certifications = [
   { name: "IT Specialist — Java", org: "Certiport (Pearson VUE), 2026", url: "https://www.credly.com/badges/2980f83d-4019-418d-aba9-48a1de5a3317/public_url" },
   { name: "Unity Certified User: Programmer", org: "Unity Technologies, 2026", url: "https://www.credly.com/badges/44e0e885-f441-45e4-9417-9e847aa2cb01/public_url" },
   { name: "Career Essentials in GitHub", org:"GitHub and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/bc045654df7434fb02545eea1099f1bf3875839d4e5ed2cba03b86a07631e9ce"},
+  { name: "Career Essentials in Software Development", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/c17aa173ee49ebd61b14c4c8e91d135249193a50334e36350a81bd94155366f5"}
 ];
 
 const stats = [
   { value: "4", label: "Shipped projects" },
-  { value: "6", label: "Certifications" },
+  { value: "7", label: "Certifications" },
   { value: "2026", label: "Graduated" },
 ];
 
