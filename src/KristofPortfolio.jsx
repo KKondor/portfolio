@@ -105,11 +105,12 @@ const certifications = [
   { name: "Career Essentials in Software Development", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/c17aa173ee49ebd61b14c4c8e91d135249193a50334e36350a81bd94155366f5"},
   { name: "Career Essentials in Generative AI", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/257f650e06c2fe73eaca0dcbf850fa8f3d0c6c1faaf0251200bf825ad11c5ccc"},
   { name: "Atlassian Agile Project Management Professional Certificate", org: "Atlassian and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/39a7acc61b6d92f00f3e927f473c2b5ac40cf2a88264b8ded61bafda1b75db6a"},
+  {name : "Docker Foundations Professional Certificate", org: "Docker and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/e85bbc5c96dc777e3306904c223d44c8cec9c070165c6a4236c7bbe3b4bf4df9"},
 ];
 
 const stats = [
   { value: "4", label: "Shipped projects" },
-  { value: "9", label: "Certifications" },
+  { value: "10", label: "Certifications" },
   { value: "2026", label: "Graduated" },
 ];
 
