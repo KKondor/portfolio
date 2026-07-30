@@ -30,6 +30,20 @@ function Linkedin({ size = 18, style }) {
 
 const projects = [
   {
+    name: "ExpenseSplitter",
+    color: "#38bdf8",
+    tagline: "A group-expense settlement library with a greedy debt-minimization algorithm, built to showcase testing and CI",
+    stack: ["C#", "xUnit", "GitHub Actions", "Codecov"],
+    github: "https://github.com/KKondor/ExpenseSplitter",
+    demo: null,
+    bullets: [
+      "Implemented a greedy debt-minimization algorithm, computing net balances and settling them in the minimum number of transactions",
+      "Caught and fixed a real min-heap vs. max-heap bug by deliberately writing a test case designed to expose it",
+      "Enforced domain invariants at construction time, with full test coverage of every validation rule and rejection path",
+      "Built a GitHub Actions CI pipeline with coverage reporting (Codecov), including branch protection requiring CI to pass before merge",
+    ],
+  },
+  {
     name: "JobFollower",
     color: "#ef4444",
     tagline: "A drag-and-drop Kanban board for tracking job applications, with full JWT auth",
@@ -234,14 +248,14 @@ export default function Portfolio() {
         .kk-card-body { padding: 24px; }
         .kk-card-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
         .kk-card-title { font-size: 19px; font-weight: 600; margin: 0 0 4px; }
-        .kk-card-tagline { margin: 0; color: ${c.dim}; }
+        .kk-card-tagline { margin: 0; color: ${c.dim}; text-align:left; }
         .kk-card-actions { display: flex; gap: 8px; flex-shrink: 0; }
         .kk-pill-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; padding: 6px 12px; border-radius: 999px; transition: transform .15s ease; }
         .kk-pill-btn:hover { transform: translateY(-2px); }
         .kk-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
         .kk-tag { font-size: 12px; padding: 4px 10px; border-radius: 999px; background: ${c.accentSoft}; color: ${c.accent}; border: 1px solid ${c.accent}33; }
-        .kk-bullets { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
-        .kk-bullets li { display: flex; gap: 8px; font-size: 14px; color: ${c.dim}; }
+        .kk-bullets { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; text-align: left; }
+        .kk-bullets li { display: flex; gap: 8px; font-size: 14px; color: ${c.dim}; text-align: left; }
 
         .kk-skills-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
         @media (min-width: 640px) { .kk-skills-grid { grid-template-columns: 1fr 1fr; } }
