@@ -106,7 +106,7 @@ const skillGroups = [
   { title: "Languages", items: ["C#", "Java", "Python", "JavaScript", "TypeScript", "C++"] },
   { title: "Backend", items: ["ASP.NET", "Entity Framework", "OOP", "SQL", "MySQL", "PostgreSQL"] },
   { title: "Frontend", items: ["Angular", "React", "HTML", "CSS", "SASS"] },
-  { title: "Tools", items: ["Git & GitHub", "Linux", "Swagger", "Unit Testing","Jira"] },
+  { title: "Tools", items: ["Git & GitHub", "Linux", "Swagger", "Unit Testing","Jira", "Github Actions"] },
 ];
 
 const certifications = [
