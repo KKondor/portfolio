@@ -119,12 +119,15 @@ const certifications = [
   { name: "Career Essentials in Software Development", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/c17aa173ee49ebd61b14c4c8e91d135249193a50334e36350a81bd94155366f5"},
   { name: "Career Essentials in Generative AI", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/257f650e06c2fe73eaca0dcbf850fa8f3d0c6c1faaf0251200bf825ad11c5ccc"},
   { name: "Atlassian Agile Project Management Professional Certificate", org: "Atlassian and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/39a7acc61b6d92f00f3e927f473c2b5ac40cf2a88264b8ded61bafda1b75db6a"},
-  {name : "Docker Foundations Professional Certificate", org: "Docker and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/e85bbc5c96dc777e3306904c223d44c8cec9c070165c6a4236c7bbe3b4bf4df9"},
+  { name: "Docker Foundations Professional Certificate", org: "Docker and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/e85bbc5c96dc777e3306904c223d44c8cec9c070165c6a4236c7bbe3b4bf4df9"},
+  { name: "JavaScript Foundations Professional Certificate", org: "Mozilla and LinkedIn Learning, 2026", url:"https://www.linkedin.com/learning/certificates/3a4dd64d7b49a57f5562ed74f2258e7b9e0e916f393f8b2c6de36f5980d1cbb6"},
+  { name: "C++ Programming Professional Certificate", org: "OpenEDG C++ Institute and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/2870c7f3dd96b632f6b54b81da22a6274b5713630f1f785c2600f8bbed9a4680"},
+  { name: "Java Foundations Professional Certificate", org: "JetBrains and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/b550ffa769be4ec060603b1b5aee8cfe090c7bfe90a26c8582671186be8321d5"},
 ];
 
 const stats = [
   { value: "4", label: "Shipped projects" },
-  { value: "10", label: "Certifications" },
+  { value: "13", label: "Certifications" },
   { value: "2026", label: "Graduated" },
 ];
 
