@@ -123,11 +123,14 @@ const certifications = [
   { name: "JavaScript Foundations Professional Certificate", org: "Mozilla and LinkedIn Learning, 2026", url:"https://www.linkedin.com/learning/certificates/3a4dd64d7b49a57f5562ed74f2258e7b9e0e916f393f8b2c6de36f5980d1cbb6"},
   { name: "C++ Programming Professional Certificate", org: "OpenEDG C++ Institute and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/2870c7f3dd96b632f6b54b81da22a6274b5713630f1f785c2600f8bbed9a4680"},
   { name: "Java Foundations Professional Certificate", org: "JetBrains and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/b550ffa769be4ec060603b1b5aee8cfe090c7bfe90a26c8582671186be8321d5"},
+  { name: "DevOps Professional Certificate", org: "PagerDuty and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/945be3fe52a44c423d8c3ce05864b153140f6f486b35e12cd253752ba7fe760c"},
+  { name: "Kotlin Professional Certificate", org: "JetBrains and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/e527076f25b4066e27bd3a19fb9ac4c2161358301dcc60396195fdd7ad73935f"},
+  { name: "Programming with Python Professional Certificate", org: "OpenEDG Python Institute and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/d6f96b458c6c1033ec79a61ea7c0cd3655f8e2cd1f4a41ac13128f994138349b"},
 ];
 
 const stats = [
   { value: "4", label: "Shipped projects" },
-  { value: "13", label: "Certifications" },
+  { value: "16", label: "Certifications" },
   { value: "2026", label: "Graduated" },
 ];
 
