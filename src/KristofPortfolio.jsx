@@ -126,11 +126,14 @@ const certifications = [
   { name: "DevOps Professional Certificate", org: "PagerDuty and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/945be3fe52a44c423d8c3ce05864b153140f6f486b35e12cd253752ba7fe760c"},
   { name: "Kotlin Professional Certificate", org: "JetBrains and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/e527076f25b4066e27bd3a19fb9ac4c2161358301dcc60396195fdd7ad73935f"},
   { name: "Programming with Python Professional Certificate", org: "OpenEDG Python Institute and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/d6f96b458c6c1033ec79a61ea7c0cd3655f8e2cd1f4a41ac13128f994138349b"},
+  { name: "Microsoft Copilot for Productivity", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/871d0ff9017ed2b3aad4a82a4bb6370f1b741a2db6c1e99d1f00e496a299c555"},
+  { name: "Build Your Generative AI Productivity Skills", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/0e5f8071ec832e6da11039035a62fbd23130a3e5e2686785009de439f9ea013b"},
+  { name: "Career Essentials in System Administration", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/d54d5a499b36ad03229a0d3b14d4b4c213a3d1245453a46088623c37c7a5f639"},
 ];
 
 const stats = [
   { value: "4", label: "Shipped projects" },
-  { value: "16", label: "Certifications" },
+  { value: "19", label: "Certifications" },
   { value: "2026", label: "Graduated" },
 ];
 
