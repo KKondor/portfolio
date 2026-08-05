@@ -129,11 +129,13 @@ const certifications = [
   { name: "Microsoft Copilot for Productivity", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/871d0ff9017ed2b3aad4a82a4bb6370f1b741a2db6c1e99d1f00e496a299c555"},
   { name: "Build Your Generative AI Productivity Skills", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/0e5f8071ec832e6da11039035a62fbd23130a3e5e2686785009de439f9ea013b"},
   { name: "Career Essentials in System Administration", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/d54d5a499b36ad03229a0d3b14d4b4c213a3d1245453a46088623c37c7a5f639"},
+  { name: "Microservices Foundations Professional Certificate", org: "Kong and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/a75187a097f7163fd04e94c2d530dfce3af034373c1503761609d8a886d6f2f7"},
+  { name: "Microsoft Azure Essentials Professional Certificate", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/2b166beb1708313dd8ecd6a8eed24563f133f0ba23fdbb0b173ad641f7587384"},
 ];
 
 const stats = [
   { value: "4", label: "Shipped projects" },
-  { value: "19", label: "Certifications" },
+  { value: "21", label: "Certifications" },
   { value: "2026", label: "Graduated" },
 ];
 
