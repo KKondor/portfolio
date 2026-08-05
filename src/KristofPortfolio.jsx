@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Mail, Phone, ExternalLink, ArrowUpRight, Menu, X, BookOpen } from "lucide-react";
+import { Mail, Phone, ExternalLink, ArrowUpRight, Menu, X, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
 
 const c = {
   bg: "#0f1115",
@@ -173,6 +173,7 @@ function Tag({ children }) {
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [certsExpanded, setCertsExpanded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -289,11 +290,24 @@ export default function Portfolio() {
         .kk-resume-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
         .kk-resume-org { color: ${c.dim}; }
         .kk-resume-desc { font-size: 14px; margin-top: 8px; color: ${c.dim}; line-height: 1.6; }
+        .kk-cert-list-wrap { position: relative; }
+        .kk-cert-list-wrap.collapsed { max-height: 320px; overflow: hidden; }
+        .kk-cert-list-wrap.collapsed::after {
+          content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 72px;
+          background: linear-gradient(to bottom, transparent, ${c.panel});
+          pointer-events: none;
+        }
         .kk-cert-list { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
         .kk-cert-item { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
         .kk-cert-link { font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; color: ${c.text}; }
         .kk-cert-link:hover { text-decoration: underline; }
         .kk-cert-org { font-size: 12px; color: ${c.faint}; }
+        .kk-cert-toggle {
+          display: flex; align-items: center; gap: 6px; margin: 16px auto 0; font-size: 13px; font-weight: 500;
+          padding: 8px 18px; border-radius: 999px; border: 1px solid ${c.border}; color: ${c.text};
+          transition: transform .15s ease, border-color .15s ease;
+        }
+        .kk-cert-toggle:hover { transform: translateY(-2px); border-color: ${c.accent}88; }
 
         /* Publication */
         .kk-pub-card { padding: 28px; }
@@ -303,7 +317,7 @@ export default function Portfolio() {
         .kk-pub-authors { font-size: 14px; margin: 0 0 4px; color: ${c.dim}; }
         .kk-pub-venue { font-size: 13px; margin: 0; color: ${c.faint}; font-style: italic; }
         .kk-pub-abstract-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin: 20px 0 10px; color: ${c.faint}; }
-        .kk-pub-abstract { font-size: 14px; line-height: 1.7; color: ${c.dim}; margin: 0 0 20px; text-align: left;}
+        .kk-pub-abstract { font-size: 14px; line-height: 1.7; color: ${c.dim}; margin: 0 0 20px; text-align: left; }
         .kk-pub-keywords-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin: 0 0 10px; color: ${c.faint}; }
 
         .kk-contact-lead { margin-bottom: 32px; color: ${c.dim}; }
@@ -517,16 +531,25 @@ export default function Portfolio() {
 
           <div className="kk-card kk-resume-card">
             <div className="kk-resume-label">Certifications</div>
-            <ul className="kk-cert-list">
-              {certifications.map((cert) => (
-                <li key={cert.name} className="kk-cert-item">
-                  <a href={cert.url} target="_blank" rel="noreferrer" className="kk-cert-link">
-                    {cert.name} <ExternalLink size={11} style={{ color: c.faint }} />
-                  </a>
-                  <span className="kk-cert-org">{cert.org}</span>
-                </li>
-              ))}
-            </ul>
+            <div className={`kk-cert-list-wrap ${certsExpanded ? "" : "collapsed"}`}>
+              <ul className="kk-cert-list">
+                {certifications.map((cert) => (
+                  <li key={cert.name} className="kk-cert-item">
+                    <a href={cert.url} target="_blank" rel="noreferrer" className="kk-cert-link">
+                      {cert.name} <ExternalLink size={11} style={{ color: c.faint }} />
+                    </a>
+                    <span className="kk-cert-org">{cert.org}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button className="kk-cert-toggle" onClick={() => setCertsExpanded((e) => !e)}>
+              {certsExpanded ? (
+                <>Show less <ChevronUp size={14} /></>
+              ) : (
+                <>Show all {certifications.length} certifications <ChevronDown size={14} /></>
+              )}
+            </button>
           </div>
         </div>
       </Section>
