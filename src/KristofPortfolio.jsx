@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Mail, Phone, ExternalLink, ArrowUpRight, Menu, X } from "lucide-react";
+import { Mail, Phone, ExternalLink, ArrowUpRight, Menu, X, BookOpen } from "lucide-react";
 
 const c = {
   bg: "#0f1115",
@@ -133,14 +133,24 @@ const certifications = [
   { name: "Microsoft Azure Essentials Professional Certificate", org: "Microsoft and LinkedIn Learning, 2026", url: "https://www.linkedin.com/learning/certificates/2b166beb1708313dd8ecd6a8eed24563f133f0ba23fdbb0b173ad641f7587384"},
 ];
 
+const publication = {
+  title: "Comparing evolutionary algorithms and reinforcement learning algorithms in “mate-in-N” puzzles (To-be Published)",
+  authors: "Kristóf Kondor, Géza Horváth",
+  venue: "2026 IEEE 4th Conference on Information Technology and Data Science",
+  keywords: ["Deep Q-Network", "Genetic Algorithm", "Chess", "Mate-in-N", "Reinforcement Learning", "Evolutionary Algorithms"],
+  abstract:
+    "This article presents an analysis of two learning-based artificial intelligence algorithms, Deep Q-Network (DQN) and Genetic Algorithm (GA), applied to solving mate-in-N chess puzzles. Both methods were implemented in Python and integrated with the Stockfish engine to ensure reliable reward calculation. Neither algorithm retains knowledge between puzzles — each task is solved from an untrained initial state. The study analyzes learning behavior, success rate, stability, and the advantages of the two methods across multiple difficulty levels, comparing win rates, reward progression, runtime, and solution accuracy. The results show that reinforcement-learning-based DQN achieved higher win rates with lower overall runtime, while the evolutionary GA demonstrated the ability to produce higher-quality, more creative solutions — highlighting the complementary strengths of the two approaches in structured tactical decision-making tasks.",
+};
+
 const stats = [
   { value: "4", label: "Shipped projects" },
   { value: "21", label: "Certifications" },
-  { value: "2026", label: "Graduated" },
+  { value: "1", label: "Publications" },
 ];
 
 const navItems = [
   { id: "projects", label: "Projects" },
+  { id: "publication", label: "Publication" },
   { id: "skills", label: "Skills" },
   { id: "resume", label: "Resume" },
   { id: "contact", label: "Contact" },
@@ -285,6 +295,17 @@ export default function Portfolio() {
         .kk-cert-link:hover { text-decoration: underline; }
         .kk-cert-org { font-size: 12px; color: ${c.faint}; }
 
+        /* Publication */
+        .kk-pub-card { padding: 28px; }
+        .kk-pub-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+        .kk-pub-icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: ${c.accentSoft}; color: ${c.accent}; border: 1px solid ${c.accent}33; }
+        .kk-pub-title { font-size: 18px; font-weight: 600; margin: 0 0 6px; line-height: 1.4; color: ${c.text}; }
+        .kk-pub-authors { font-size: 14px; margin: 0 0 4px; color: ${c.dim}; }
+        .kk-pub-venue { font-size: 13px; margin: 0; color: ${c.faint}; font-style: italic; }
+        .kk-pub-abstract-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin: 20px 0 10px; color: ${c.faint}; }
+        .kk-pub-abstract { font-size: 14px; line-height: 1.7; color: ${c.dim}; margin: 0 0 20px; text-align: left;}
+        .kk-pub-keywords-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin: 0 0 10px; color: ${c.faint}; }
+
         .kk-contact-lead { margin-bottom: 32px; color: ${c.dim}; }
         .kk-contact-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
         @media (min-width: 640px) { .kk-contact-grid { grid-template-columns: 1fr 1fr; } }
@@ -424,6 +445,32 @@ export default function Portfolio() {
               </div>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* Publication */}
+      <Section id="publication" eyebrow="Research" title="Publication">
+        <div className="kk-card kk-pub-card">
+          <div className="kk-pub-head">
+            <div className="kk-pub-icon">
+              <BookOpen size={20} />
+            </div>
+            <div>
+              <h3 className="kk-pub-title">{publication.title}</h3>
+              <p className="kk-pub-authors">{publication.authors}</p>
+              <p className="kk-pub-venue">{publication.venue}</p>
+            </div>
+          </div>
+
+          <div className="kk-pub-abstract-label">Abstract</div>
+          <p className="kk-pub-abstract">{publication.abstract}</p>
+
+          <div className="kk-pub-keywords-label">Keywords</div>
+          <div className="kk-tag-row" style={{ marginBottom: 0 }}>
+            {publication.keywords.map((k) => (
+              <Tag key={k}>{k}</Tag>
+            ))}
+          </div>
         </div>
       </Section>
 
